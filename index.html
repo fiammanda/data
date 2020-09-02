@@ -2,7 +2,6 @@
 {% for page in site.posts %}
 <article itemscope itemtype="https://schema.org/CreativeWork">
 	<h1 itemprop="name"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
-	{% include page-meta.html %}
 	<div itemprop="abstract">
 		{{ page.summary | markdownify }}
 	</div>
