@@ -1,0 +1,22 @@
+
+{% for page in site.posts %}
+<article itemscope itemtype="https://schema.org/CreativeWork">
+	<h1 itemprop="name"><a href="{{ site.baseurl }}{{ page.url }}">{{ page.title }}</a></h1>
+	{% include page-meta.html %}
+	<div itemprop="abstract">
+		{{ page.summary | markdownify }}
+	</div>
+</article>
+{% endfor %}
+
+<nav>
+	{% for page in (1..paginator.total_pages) %}
+	{% if page == paginator.page %}
+	<em>{{ page }}</em>
+	{% elsif page == 1 %}
+	<a href="{{ '/' | relative_url }}">1</a>
+	{% else %}
+	<a href="{{ site.paginate_path | relative_url | replace: ':num', page }}">{{ page }}</a>
+	{% endif %}
+	{% endfor %}
+</nav>
