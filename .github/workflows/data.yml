@@ -12,7 +12,7 @@ jobs:
     - name: curl
       uses: wei/curl@master
       with:
-        args: -X GET -H "X-LC-Id:${{ secrets.LEANCLOUD_ID }}" -H "X-LC-Key:${{ secrets.LEANCLOUD_KEY }}" -G --data-urlencode "limit=5" --data-urlencode "keys=-createdAt,-updatedAt,-title" -o counter.json ${{ secrets.LEANCLOUD_API }}/1.1/classes/Counter 
+        args: -X GET -H "X-LC-Id:${{ secrets.LEANCLOUD_ID }}" -H "X-LC-Key:${{ secrets.LEANCLOUD_KEY }}" -G --data-urlencode "limit=200" --data-urlencode "keys=-createdAt,-updatedAt,-title" -o counter.json ${{ secrets.LEANCLOUD_API }}/1.1/classes/Counter 
     - name: commit
       run: |
         git config --local user.name "${GITHUB_ACTOR}"
