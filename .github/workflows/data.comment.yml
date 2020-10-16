@@ -1,4 +1,4 @@
-name: data.counter
+name: data.comment
 on:
   workflow_dispatch:
 jobs:
