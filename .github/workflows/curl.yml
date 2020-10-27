@@ -8,7 +8,7 @@ jobs:
   bot:
     runs-on: ubuntu-latest
     steps:
-    - name: checkout
+    - name: Checkout
       uses: actions/checkout@v2
-    - name: curl
-      run: bash ./curl.sh
+    - name: Curl
+      run: curl https://fiammanda.azurewebsites.net/pages/0
